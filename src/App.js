@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Nav from './components/Nav';
@@ -48,8 +48,8 @@ class App extends Component {
   }
 
   submitNote = (data, id) => {
-    this.performSubmissionRequest(data, id)  
-    .then((res) => this.setState({ showNote: false}) )
+    this.performSubmissionRequest(data, id)
+    .then((res) => this.setState({ showNote: false }) )
     .catch((err) => {
       const { errors } = err.response.data;
       if (errors.content) {
